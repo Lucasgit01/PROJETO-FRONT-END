@@ -7,7 +7,7 @@ import type { ChartData } from "recharts/types/state/chartDataSlice";
 export const InitialPage = () => {
     const newOrders = simOrders();
     const [ordersInsight, setOrders] = useState<Array<OrdersType>>(newOrders);
-    const [DataChart, setData] = useState<ChartData<DataChart>>();
+    const [DataChart, setData] = useState<ChartData<DataChart>>([]);
 
     const months = [
         "Janeiro",
@@ -24,31 +24,34 @@ export const InitialPage = () => {
         "Dezembro",
     ];
 
+    const formatMonth = (value: string) => {
+        return value.charAt(0) + value.charAt(1) + value.charAt(2); 
+    }
+
     useEffect(() => {
         const intervalOrders = setInterval(() => {
             const newOrders = simOrders();
-            setOrders([...ordersInsight, ...newOrders]);
-        }, 1000 * 60 * 30);
+            setOrders(newOrders);
+        }, 1000 * 60 * 1);
         return () => clearInterval(intervalOrders);
     }, []);
 
     useEffect(() => {
+        const dataChart: Array<DataChart> = [];
         for (const each of months) {
             const filterMonthsOrders = ordersInsight.filter(f => f.month === each);
-            console.log(ordersInsight)
             const prices: Array<number> = [];
             filterMonthsOrders.forEach((f) => f.items.forEach(f => prices.push(f.price)))
-            const amountMonth = prices.reduce((acc, current) => acc + current, 0);
-            setData([...DataChart ?? [], { name: each, value: amountMonth }]);
+            const amountMonth = Math.floor(prices.reduce((acc, current) => acc + current, 0));
+            dataChart.push({ name: formatMonth(each), value: amountMonth })
+            setData(dataChart);
         }
     }, [ordersInsight])
 
-    console.log(DataChart)
-
     return (
-        <div>
+        <div style={{ alignItems: "center", justifyItems: "center" }}>
             <h1>Métricas</h1><br />
-            <LineInsight DataChart={DataChart!} />
+            <LineInsight DataChart={DataChart} Attributes={{ width: '60vw', height: 300 }}/>
         </div>
     )
 }

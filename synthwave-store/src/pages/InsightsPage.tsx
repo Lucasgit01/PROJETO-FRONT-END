@@ -1,4 +1,4 @@
-import { LineChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line } from 'recharts';
+import { LineChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line, ResponsiveContainer } from 'recharts';
 import type { ChartData } from 'recharts/types/state/chartDataSlice';
 
 export type DataChart = {
@@ -7,30 +7,32 @@ export type DataChart = {
 }
 
 type Props = {
-    DataChart: ChartData<DataChart>
+    DataChart: ChartData<DataChart>,
+    Attributes: React.CSSProperties
 }
 
-export const LineInsight = ({ DataChart }: Props) => {
+export const LineInsight = ({ DataChart, Attributes }: Props) => {
     return (
-        <div>
-            <LineChart
-                style={{ width: '60%', maxWidth: '700px', maxHeight: '60vh', aspectRatio: 1.618 }}
-                responsive={true}
-                data={DataChart}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis width="auto" />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="Mes" stroke="#203372" isAnimationActive={true} />
-            </LineChart>
+        <div style={{ ...Attributes }}>
+            <ResponsiveContainer>
+                <LineChart
+                    style={{ borderRadius: 10, background: '#e3e6e7', paddingTop: 20 }}
+                    data={DataChart}
+                    margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" name='Total Vendido - R$' activeDot={true} dataKey="value" stroke="#203372" isAnimationActive={true} />
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     )
 }
