@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { simOrders } from "../data/mocks"
-import type { OrdersType } from "../@types/orders"
-import { LineInsight, type DataChart } from "./InsightsPage";
+import { simOrders } from "../../data/simulation/orders"
+import type { OrdersType } from "../../@types/orders"
+import { LineInsight, type DataChart } from "../components/InsightsLineChart";
 import type { ChartData } from "recharts/types/state/chartDataSlice";
 
 export const InitialPage = () => {
@@ -25,14 +25,14 @@ export const InitialPage = () => {
     ];
 
     const formatMonth = (value: string) => {
-        return value.charAt(0) + value.charAt(1) + value.charAt(2); 
+        return value.charAt(0) + value.charAt(1) + value.charAt(2);
     }
 
     useEffect(() => {
         const intervalOrders = setInterval(() => {
             const newOrders = simOrders();
             setOrders(newOrders);
-        }, 1000 * 60 * 1);
+        }, 1000 * 60 * 5);
         return () => clearInterval(intervalOrders);
     }, []);
 
@@ -49,9 +49,11 @@ export const InitialPage = () => {
     }, [ordersInsight])
 
     return (
-        <div style={{ alignItems: "center", justifyItems: "center" }}>
-            <h1>Métricas</h1><br />
-            <LineInsight DataChart={DataChart} Attributes={{ width: '60vw', height: 300 }}/>
+        <div style={{ flexDirection: "column", justifyItems: "center" }}>
+            <div style={{ paddingBottom: 10, justifyItems: "center" }}>
+                <h1>Métricas</h1><br />
+                <LineInsight DataChart={DataChart} Attributes={{ width: '60vw', height: 300 }} />
+            </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/Sidebar.css";
+import "../../assets/Sidebar.css";
 import { Outlet } from "react-router-dom";
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
 

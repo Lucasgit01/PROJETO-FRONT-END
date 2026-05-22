@@ -1,4 +1,4 @@
-import { Application } from "./routes/browser"
+import { Application } from "./navigation/browser"
 
 function App() {
 

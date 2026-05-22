@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from '../components/global-side-bar';
-import { InitialPage } from '../pages/InitialPage';
+import Sidebar from '../layout/components/global/GlobalSideBar';
+import { InitialPage } from '../layout/pages/InitialPage';
 
 
 export const Application = () => {
