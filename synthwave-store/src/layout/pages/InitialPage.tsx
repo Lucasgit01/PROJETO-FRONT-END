@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { simOrders } from "../../data/simulation/orders"
+import { simOrders } from "../../data/mocks/orders"
 import type { OrdersType } from "../../@types/orders"
-import { LineInsight, type DataChart } from "../components/InsightsLineChart";
+import { LineInsight, type DataChart } from "../components/global/InsightsLineChart";
 import type { ChartData } from "recharts/types/state/chartDataSlice";
 
 export const InitialPage = () => {

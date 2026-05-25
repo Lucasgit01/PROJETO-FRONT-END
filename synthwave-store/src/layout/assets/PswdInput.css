@@ -3,8 +3,9 @@
     border-radius: 15px;
     background-color: aliceblue;
     align-items: center;
+    justify-items: space-between;
     padding: 10px 0px;
-    width: 91%;
+    width: 90%;
 }
 
 .div-container:hover {
@@ -13,12 +14,12 @@
 
 .icon {
     display: flex;
+    padding: 2px 8px;
     border-radius: 15px;
 }
 
-.input-text {
+.input-pass {
     border: none;
-    width: 80%;
     font-family: "League Spartan", sans-serif;
     font-size: medium;
     font-weight: 500;
@@ -26,4 +27,18 @@
     text-decoration: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0);
+}
+
+.eyes {
+    display: flex;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 15px;
+    border: none;
+    align-content: center;
+    margin-right: 40px;
+}
+
+.eyes:hover{
+    box-shadow: 0px 0px 2px black;
 }

@@ -1,0 +1,81 @@
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/images/login-admin-image.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 10px;
+    margin-right: 30%;
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px rgba(34, 7, 129, 0.808);
+    background-color: rgb(5, 16, 37);
+}
+
+.form {
+    margin-top: 15px;
+    display: block;
+    justify-items: center;
+    align-content: center;
+    padding-bottom: 15px;
+}
+
+legend {
+    margin-left: 15px;
+    justify-self: left;
+    color: beige;
+    padding: 5px 0px;
+}
+
+.description {
+    color: rgba(240, 255, 255, 0.897);
+    width: 60%;
+    text-align: center;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 64, 0.719);
+    border-radius: 4px;
+}
+
+.msg-error {
+    text-align: center;
+    font-weight: 500;
+    font-size: medium;
+    padding: 0px 6px;
+    max-width: 220px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+@media screen and (max-width: 850px) {
+    .background {
+        background-image: url("../assets/images/admin-login-image-mobile.jpg");
+        justify-content: center;
+    }
+
+    .section {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .section {
+        height: 70%;
+    }
+}
