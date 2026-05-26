@@ -13,22 +13,23 @@ import { AlertCircle, X } from "lucide-react";
 export const LoginForm = () => {
     const [email, setEmail] = useState<string>('')
     const [pass, setPass] = useState<string>('')
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState<boolean>()
     const [error, setError] = useState<string>('')
-    const [disable, setDisabled] = useState(false)
+    const [disable, setDisabled] = useState<boolean>()
     const navigate = useNavigate()
+
+
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setLoading(true);
+        setLoading(true)
         setDisabled(true);
-
-
         try {
+            console.log(loading)
             const emailTest = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
             if (!emailTest.test(email)) return setError(`Insira um email válido.\nEX: seuendereco@provedor.com`);
             if (!pass) return setError("Nenhuma senha informada.");
-            
+
             setError("")
 
             const instanceValidator = new ControllerLogin(email, pass)
@@ -40,20 +41,18 @@ export const LoginForm = () => {
                 pauseOnHover: true,
                 draggable: true,
             })
-            setTimeout(() => {
-                navigate("/home")
-            }, 3000);
+            navigate("/home")
         } catch (error) {
             toast.error(`${(error as Record<string, string>).message}`, {
                 position: "bottom-right",
                 autoClose: 5000,
                 pauseOnHover: true,
                 draggable: true,
-                icon: <X/>
+                icon: <X />
             })
         } finally {
-            setDisabled(false);
-            setLoading(false)
+                setDisabled(false);
+                setLoading(false)
         }
 
     }
@@ -67,7 +66,12 @@ export const LoginForm = () => {
                     <TextInput onChange={(e) => setEmail(e.target.value)} />
                     <legend>Senha</legend>
                     <PswdInput onChange={(e) => setPass(e.target.value)} />
-                    <Button title={"Entrar"} requested={loading} props={{ disabled: disable }} /><br />
+                    <Button
+                        title={"Entrar"}
+                        requested={loading!}
+                        props={{ disabled: disable }}
+                    />
+                    <br />
                 </form>
                 <footer className="description">Faça o login para acessar a Área segura administrativa.</footer>
             </section>
