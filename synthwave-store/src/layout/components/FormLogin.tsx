@@ -39,11 +39,25 @@ export const LoginForm = () => {
                     color: "white"
                 },
                 icon: <CheckCircle/>,
-                duration: 5000
+                iconTheme: {
+                    primary: "#363434",
+                    secondary: "#fff"
+                }
             })
             navigate("/home")
         } catch (error) {
-            
+            toast.error((error as Record<string, string>).message, {
+                position: "top-center",
+                style: {
+                    backgroundColor: "#b6224ef3",
+                    color: "white",
+                },
+                duration: 5000,
+                iconTheme: {
+                    primary: "rgba(211, 26, 26, 0.84)",
+                    secondary: "#faf7f7cb"
+                }
+            })
         } finally {
             setTimeout(() => {
                 setDisabled(false);

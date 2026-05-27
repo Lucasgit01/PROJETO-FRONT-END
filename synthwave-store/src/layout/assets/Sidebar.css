@@ -85,8 +85,9 @@
     background: linear-gradient(to right, rgba(218, 221, 224, 0.788), rgba(166, 168, 175, 0.733));
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu-btn {
@@ -95,6 +96,36 @@
     font-size: 26px;
     cursor: pointer;
     margin-right: 15px;
+}
+
+.hamburguer-area {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    display: flex;
+    justify-self: right;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    
+}
+
+.animated-text {
+    animation: down 1s ease-out forwards;
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(-300%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .menu-btn:hover {

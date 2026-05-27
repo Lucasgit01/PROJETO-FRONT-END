@@ -4,18 +4,18 @@ import { Outlet } from "react-router-dom";
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
 
 const pageVariants = {
-    initial: { opacity: 0, x: -50 },
-    in: { opacity: 1, x: 0 },
-    out: { opacity: 0, x: 50 },
+  initial: { opacity: 0, x: -50 },
+  in: { opacity: 1, x: 0 },
+  out: { opacity: 0, x: 50 },
 };
 
 const pageTransition: Transition = {
-    type: "tween",
-    ease: "anticipate",
-    duration: 0.5,
+  type: "tween",
+  ease: "anticipate",
+  duration: 0.5,
 };
 
-export default function Sidebar() {
+export const Sidebar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="container">
@@ -50,14 +50,18 @@ export default function Sidebar() {
       {/* Conteúdo */}
       <div className="content">
         <header className="header">
-          <button
-            className="menu-btn"
-            onClick={() => setOpen(true)}
-          >
-            ☰
-          </button>
-
-          <h1>Dashboard</h1>
+          <div className="hamburguer-area">
+            <button
+              className="menu-btn"
+              onClick={() => setOpen(true)}
+            >
+              ☰
+            </button>
+            <h1>Synthwave</h1>
+          </div>
+          <div className="avatar">
+            <p className="animated-text">{`Olá ${name}`}</p>
+          </div>
         </header>
 
         <main className="main">
