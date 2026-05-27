@@ -6,9 +6,9 @@ import { Button } from "../ui/SubmitButton";
 import { TextInput } from "../ui/TextField";
 import { PswdInput } from "../ui/PasswordInput";
 import { useState } from "react";
-import { toast } from "react-toastify";
 import { ControllerLogin } from "../../data/controllers/login.controller";
-import { AlertCircle, X } from "lucide-react";
+import { AlertCircle, CheckCircle } from "lucide-react";
+import toast from "react-hot-toast";
 
 export const LoginForm = () => {
     const [email, setEmail] = useState<string>('')
@@ -18,14 +18,11 @@ export const LoginForm = () => {
     const [disable, setDisabled] = useState<boolean>()
     const navigate = useNavigate()
 
-
-
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setLoading(true)
         setDisabled(true);
         try {
-            console.log(loading)
             const emailTest = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
             if (!emailTest.test(email)) return setError(`Insira um email válido.\nEX: seuendereco@provedor.com`);
             if (!pass) return setError("Nenhuma senha informada.");
@@ -35,24 +32,23 @@ export const LoginForm = () => {
             const instanceValidator = new ControllerLogin(email, pass)
             const result = await instanceValidator.read();
             localStorage.setItem("auth", JSON.stringify(result));
-            toast.success(`Olá, bem vindo de volta ${result.name}!`, {
+            toast.success(`Olá, ${result.name}! Bem vindo de volta 👋`, {
                 position: "bottom-right",
-                autoClose: 3000,
-                pauseOnHover: true,
-                draggable: true,
+                style: {
+                    backgroundColor: "#29ad6bf3",
+                    color: "white"
+                },
+                icon: <CheckCircle/>,
+                duration: 5000
             })
             navigate("/home")
         } catch (error) {
-            toast.error(`${(error as Record<string, string>).message}`, {
-                position: "bottom-right",
-                autoClose: 5000,
-                pauseOnHover: true,
-                draggable: true,
-                icon: <X />
-            })
+            
         } finally {
+            setTimeout(() => {
                 setDisabled(false);
                 setLoading(false)
+            }, 2000)
         }
 
     }
