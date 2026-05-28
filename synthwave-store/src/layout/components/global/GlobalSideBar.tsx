@@ -24,7 +24,7 @@ export const Sidebar = () => {
       {/* Sidebar */}
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <div className="sidebar-header">
-          <h2>Painel</h2>
+          <h2>{authStore.role}</h2>
 
           <button
             className="close-btn"
