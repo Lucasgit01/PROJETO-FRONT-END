@@ -7,8 +7,9 @@ import { TextInput } from "../ui/TextField";
 import { PswdInput } from "../ui/PasswordInput";
 import { useState } from "react";
 import { ControllerLogin } from "../../data/controllers/login.controller";
-import { AlertCircle, CheckCircle } from "lucide-react";
-import toast from "react-hot-toast";
+import { AlertCircle } from "lucide-react";
+import toastTrigger from "../lib/toastTrigger";
+import { useAuthStore } from "./auth/authStore";
 
 export const LoginForm = () => {
     const [email, setEmail] = useState<string>('')
@@ -16,6 +17,7 @@ export const LoginForm = () => {
     const [loading, setLoading] = useState<boolean>()
     const [error, setError] = useState<string>('')
     const [disable, setDisabled] = useState<boolean>()
+    const setAuthStore = useAuthStore((state) => state.setAuthData);
     const navigate = useNavigate()
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -32,31 +34,19 @@ export const LoginForm = () => {
             const instanceValidator = new ControllerLogin(email, pass)
             const result = await instanceValidator.read();
             localStorage.setItem("auth", JSON.stringify(result));
-            toast.success(`Olá, ${result.name}! Bem vindo de volta 👋`, {
+            setAuthStore({
+                ...result
+            })
+            toastTrigger.success(
+                `Olá, ${result.name}! \nBem vindo de volta 👋`, {
                 position: "bottom-right",
-                style: {
-                    backgroundColor: "#29ad6bf3",
-                    color: "white"
-                },
-                icon: <CheckCircle/>,
-                iconTheme: {
-                    primary: "#363434",
-                    secondary: "#fff"
-                }
+                duration: 5000
             })
             navigate("/home")
         } catch (error) {
-            toast.error((error as Record<string, string>).message, {
+            toastTrigger.error((error as Record<string, string>).message, {
                 position: "top-center",
-                style: {
-                    backgroundColor: "#b6224ef3",
-                    color: "white",
-                },
                 duration: 5000,
-                iconTheme: {
-                    primary: "rgba(211, 26, 26, 0.84)",
-                    secondary: "#faf7f7cb"
-                }
             })
         } finally {
             setTimeout(() => {

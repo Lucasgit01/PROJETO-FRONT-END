@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../../assets/Sidebar.css";
 import { Outlet } from "react-router-dom";
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
+import { useAuthStore } from "../auth/authStore";
 
 const pageVariants = {
   initial: { opacity: 0, x: -50 },
@@ -16,6 +17,7 @@ const pageTransition: Transition = {
 };
 
 export const Sidebar = () => {
+  const authStore = useAuthStore();
   const [open, setOpen] = useState(false);
   return (
     <div className="container">
@@ -57,10 +59,21 @@ export const Sidebar = () => {
             >
               ☰
             </button>
-            <h1>Synthwave</h1>
+            <div className="store-name">
+              <span>S</span>
+              <span>Y</span>
+              <span>N</span>
+              <span>T</span>
+              <span>H</span>
+              <span>W</span>
+              <span>A</span>
+              <span>V</span>
+              <span>E</span>
+            </div>
           </div>
           <div className="avatar">
-            <p className="animated-text">{`Olá ${name}`}</p>
+            <p className="animated-text">{`Olá, ${authStore.name}`}</p>
+            <img className="avatar-image" src={authStore.avatar} width={20} />
           </div>
         </header>
 

@@ -4,5 +4,5 @@ export interface LogonType {
     password: string,
     code: string,
     role: string,
-    avatar: string
+    avatar: string | null
 };

@@ -1,4 +1,4 @@
-import type { LogonType } from "../../@types/logons";
+import type { Auth } from "../../@types/Auth";
 import { LogonsData } from "../mocks/logons";
 
 export class ControllerLogin {
@@ -7,7 +7,7 @@ export class ControllerLogin {
         private readonly password: string,
     ) {}
 
-    public async read(): Promise<Partial<LogonType>> {
+    public async read(): Promise<Auth> {
         try {
             const user = LogonsData.find(f => f.email === this.email);
             

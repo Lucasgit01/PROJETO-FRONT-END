@@ -1,0 +1,1 @@
+export type Auth = Pick<LogonType, "name" | "role" | "avatar">;
