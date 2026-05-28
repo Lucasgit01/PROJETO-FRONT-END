@@ -1,6 +1,6 @@
 import type React from "react";
 import { useNavigate } from "react-router-dom";
-import "../assets/Login.css";
+import "../assets/css/Login.css";
 import escudo from "../assets/images/Cyber Security Shield Flat Style.png"
 import { Button } from "../ui/SubmitButton";
 import { TextInput } from "../ui/TextField";
@@ -33,7 +33,6 @@ export const LoginForm = () => {
 
             const instanceValidator = new ControllerLogin(email, pass)
             const result = await instanceValidator.read();
-            localStorage.setItem("auth", JSON.stringify(result));
             setAuthStore({
                 ...result
             })

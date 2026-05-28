@@ -1,5 +1,5 @@
 import type React from "react"
-import "../assets/InputText.css"
+import "../assets/css/InputText.css"
 import { MailIcon } from "lucide-react";
 import { useState } from "react";
 

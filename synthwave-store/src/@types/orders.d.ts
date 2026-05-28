@@ -1,7 +1,8 @@
 export interface OrderItems {
-     product: string;
-        price: number;
-        image: string;
+    product: string;
+    price: number;
+    image: string;
+    quantity: number
 }
 
 export interface OrdersType {

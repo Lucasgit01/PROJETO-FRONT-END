@@ -16,7 +16,12 @@ export const LineInsight = ({ DataChart, Attributes }: Props) => {
         <div style={{ ...Attributes }}>
             <ResponsiveContainer>
                 <LineChart
-                    style={{ borderRadius: 10, background: '#e3e6e7', paddingTop: 20 }}
+                    style={{
+                        borderRadius: 10,
+                        background: '#e3e6e7',
+                        padding: 15,
+                        boxShadow: "0px 0px 4px black",
+                    }}
                     data={DataChart}
                     margin={{
                         top: 5,

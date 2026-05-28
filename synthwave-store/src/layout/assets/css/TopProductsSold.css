@@ -1,0 +1,95 @@
+.top3-container {
+  width: 100%;
+  background: #111827;
+  border-radius: 24px;
+  padding: 24px;
+  color: #fff;
+  border: 1px solid #1f2937;
+}
+
+.top3-header {
+  margin-bottom: 24px;
+}
+
+.top3-header h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.top3-header span {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.top3-grid {
+  display: inline-flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.top3-card {
+  background: #1f2937;
+  border-radius: 22px;
+  padding: 24px 18px;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.top3-card:hover {
+  transform: translateY(-5px);
+}
+
+.top3-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+}
+
+.rank-1::before {
+  background: gold;
+}
+
+.rank-2::before {
+  background: silver;
+}
+
+.rank-3::before {
+  background: #cd7f32;
+}
+
+.medal {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.top3-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.top3-card p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.top3-card strong {
+  font-size: 20px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .top3-grid {
+    grid-template-columns: 1fr;
+  }
+}

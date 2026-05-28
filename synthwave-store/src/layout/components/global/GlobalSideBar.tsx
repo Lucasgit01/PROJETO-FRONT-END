@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "../../assets/Sidebar.css";
+import "../../assets/css/Sidebar.css";
 import { Outlet } from "react-router-dom";
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
 import { useAuthStore } from "../auth/authStore";
+import { BriefcaseBusinessIcon } from "lucide-react";
 
 const pageVariants = {
   initial: { opacity: 0, x: -50 },
@@ -24,7 +25,7 @@ export const Sidebar = () => {
       {/* Sidebar */}
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <div className="sidebar-header">
-          <h2>{authStore.role}</h2>
+          <BriefcaseBusinessIcon/><h2>{authStore.role}</h2>
 
           <button
             className="close-btn"

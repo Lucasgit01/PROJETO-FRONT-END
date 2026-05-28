@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/LoadingButton.css";
+import "../assets/css/LoadingButton.css";
 
 interface LoadingButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {

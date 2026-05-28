@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "../assets/PswdInput.css"
+import "../assets/css/PswdInput.css"
 import { Eye, EyeOff, LockKeyhole } from "lucide-react";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement>

@@ -1,4 +1,6 @@
-export const simOrders = () => Array.from({ length: 100 }, (_, index) => {
+import type { OrdersType } from "../../@types/orders";
+
+export const simOrders = () => Array.from({ length: 200 }, (_, index) => {
     const buyers = [
         "Carlos Eduardo",
         "Fernanda Lima",
@@ -106,7 +108,7 @@ export const simOrders = () => Array.from({ length: 100 }, (_, index) => {
         { method: "Boleto Bancário", installments: 1 },
     ];
 
-     const months = [
+    const months = [
         "Janeiro",
         "Fevereiro",
         "Março",
@@ -125,8 +127,9 @@ export const simOrders = () => Array.from({ length: 100 }, (_, index) => {
 
     const randomItems = Array.from(
         { length: Math.floor(Math.random() * 3) + 1 },
-        () => products[Math.floor(Math.random() * products.length)]
+        () => Object.assign({ ...products[Math.floor(Math.random() * products.length)], quantity: (Math.floor(Math.random() * 10) + 1) })
     );
+
 
     const randomCity =
         cities[Math.floor(Math.random() * cities.length)];
@@ -144,4 +147,4 @@ export const simOrders = () => Array.from({ length: 100 }, (_, index) => {
         payment:
             payments[Math.floor(Math.random() * payments.length)],
     };
-});
+}) as Array<OrdersType>;
