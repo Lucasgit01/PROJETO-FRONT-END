@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Sidebar } from '../layout/components/global/GlobalSideBar';
 import { InitialPage } from '../layout/pages/InitialPage';
-import { LoginForm } from '../layout/components/FormLogin';
+import { LoginForm } from '../layout/pages/FormLogin';
 import { OnlyAuth } from '../layout/components/auth/ProtectAccess';
 
 export const Application = () => {
