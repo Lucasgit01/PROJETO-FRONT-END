@@ -1,7 +1,6 @@
 import { toast, type ToastOptions } from "react-hot-toast";
 
 class ToastTrigger {
-
     public success(message: string, options?: ToastOptions) {
         return toast.success(
             message, {

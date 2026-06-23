@@ -30,38 +30,57 @@ export const InitialPage = () => {
         return value.charAt(0) + value.charAt(1) + value.charAt(2);
     }
 
+    const amountTopItems = (items: Array<OrderItems>, currentValues: Array<OrderItems>) => {
+        items.forEach(p => {
+            const productIndex = currentValues.findIndex(f => f.id === p.id);
+            productIndex >= 0 ?
+                Object.assign(
+                    currentValues[productIndex],
+                    { ...p, quantity: p.quantity + currentValues[productIndex].quantity }
+                ) :
+                currentValues.push({ ...p })
+        })
+        return currentValues; 
+    }; 
+
     useEffect(() => {
         const intervalOrders = setInterval(() => {
             const newOrders = simOrders();
             setOrders(newOrders);
-        }, 1000 * 60 * 10);
+        }, 1000 * 60 * 1);
         return () => clearInterval(intervalOrders);
     }, []);
 
     useEffect(() => {
-        const dataChart: Array<DataChart> = [];
-        const soldItems: Array<OrderItems> = [];
+        setData([])
+        setTop([])
         for (const each of months) {
             const soldItemsInMonth = ordersInsight.filter(f => each === f.month).flatMap((m) => [...m.items]);
-            soldItems.push(...soldItemsInMonth)
             const prices = soldItemsInMonth.map((m) => m.price);
-            const amountMonth = Math.floor(prices.reduce((acc, current) => acc + current, 0));
-            dataChart.push({ name: formatMonth(each), value: amountMonth })
+            const amountMonth = Number(prices.reduce((acc, current) => acc + current, 0).toFixed(0));
+            setData(prev => [...prev, { name: formatMonth(each), value: amountMonth }])
+
+            const accumulateQuantity = amountTopItems(soldItemsInMonth, topItemsSold);
+            setTop(accumulateQuantity)
         }
-        setTop(soldItems.sort((a, b) => b.quantity - a.quantity).splice(0, 3))
-        setData(dataChart);
     }, [ordersInsight])
 
+    const topItems = topItemsSold.sort((a, b) => b.quantity - a.quantity).splice(0, 3);
+
     return (
-            <div style={{ display: "grid", rowGap: 10, justifyItems: "center" }}>
-                <div>
-                    <h1>Produtos mais vendidos</h1>
-                    <TopProductsCard products={topItemsSold} />
-                </div>
-                <div>
-                    <h1>Métricas</h1><br />
-                    <LineInsight DataChart={DataChart} Attributes={{ width: '60vw', height: 300 }} />
-                </div>
+        <div style={{
+            display: "grid",
+            rowGap: 20,
+            justifyItems: "center",
+        }}>
+            <div>
+                <h1>Produtos mais vendidos</h1>
+                <TopProductsCard products={topItems} />
             </div>
+            <div>
+                <h1>Métricas</h1>
+                <LineInsight DataChart={DataChart} Attributes={{ width: '70vw', height: "400px" }} />
+            </div>
+        </div>
     )
 }

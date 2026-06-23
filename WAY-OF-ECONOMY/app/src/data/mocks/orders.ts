@@ -1,4 +1,4 @@
-import type { OrdersType } from "../../@types/orders";
+import type { OrderItems, OrdersType } from "../../@types/orders";
 
 export const simOrders = () => Array.from({ length: 200 }, (_, index) => {
     const buyers = [
@@ -25,62 +25,72 @@ export const simOrders = () => Array.from({ length: 200 }, (_, index) => {
         "Power Games",
     ];
 
-    const products = [
+    const products: Array<Omit<OrderItems, "quantity">> = [
         {
+            id: 1,
             product: "PlayStation 5",
             price: 4299.9,
             image:
                 "https://images.unsplash.com/photo-1606813907291-d86efa9b94db",
         },
         {
+            id: 2,
             product: "Xbox Series X",
             price: 3899.9,
             image:
                 "https://media.istockphoto.com/id/1560833158/pt/foto/game-controller-with-purple-lit-keyboard-amidst-various-wireless-devices.jpg?s=612x612&w=0&k=20&c=D66EjrqcUA9GVknxt-gNSPDC6PWcP8x3A661Z6xC-0o="
         },
         {
+            id: 3,
             product: "Nintendo Switch OLED",
             price: 2299.9,
             image:
                 "https://media.istockphoto.com/id/1560833158/pt/foto/game-controller-with-purple-lit-keyboard-amidst-various-wireless-devices.jpg?s=612x612&w=0&k=20&c=D66EjrqcUA9GVknxt-gNSPDC6PWcP8x3A661Z6xC-0o=",
         },
         {
+            id: 4,
             product: "Smart TV LG OLED 65",
             price: 7999.99,
             image:
                 "https://www.lg.com/br/images/tvs/md07522877/gallery/DZ-01.jpg",
         },
         {
+            id: 5,
             product: "Smart TV Samsung 55 4K",
             price: 3199.0,
             image:
                 "https://images.samsung.com/is/image/samsung/p6pim/br/qn55q60cagxzd/gallery/br-qled-q60c-qn55q60cagxzd-537408336",
         },
         {
+            id: 6,
             product: "God of War Ragnarök",
             price: 249.9,
             image:
                 "https://upload.wikimedia.org/wikipedia/en/e/ee/God_of_War_Ragnar%C3%B6k_cover.jpg",
         },
         {
+            id: 7,
             product: "The Legend of Zelda: Tears of the Kingdom",
             price: 357.9,
             image:
                 "https://upload.wikimedia.org/wikipedia/en/f/fb/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg",
         },
         {
+            id: 8,
             product: "EA Sports FC 26",
             price: 349.9,
             image:
                 "https://upload.wikimedia.org/wikipedia/en/5/5c/EA_Sports_FC_24_cover.jpg",
         },
         {
+            id: 9,
             product: "Controle Xbox Wireless",
             price: 459.9,
             image:
                 "https://assets.xboxservices.com/assets/04/94/04947d2e-4b7b-4f53-95b5-7b3b0cb1b61d.jpg",
         },
         {
+            id: 10,
             product: "Headset Gamer HyperX",
             price: 599.9,
             image:

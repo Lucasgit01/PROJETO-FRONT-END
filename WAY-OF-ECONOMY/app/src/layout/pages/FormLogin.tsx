@@ -2,6 +2,7 @@ import type React from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/Login.css";
 import escudo from "../assets/images/Cyber Security Shield Flat Style.png"
+import animatedVector from "../assets/images/Way Of Economy - login image.png"
 import { Button } from "../ui/SubmitButton";
 import { TextInput } from "../ui/TextField";
 import { PswdInput } from "../ui/PasswordInput";
@@ -58,6 +59,7 @@ export const LoginForm = () => {
     return (
         <div className="background">
             <section className="section">
+                <div className="insert-division">
                 <img className="top-image" src={escudo} width={100} /><br />
                 {error && <div className="error"><AlertCircle /><p className="msg-error"> {error}</p></div>}
                 <form className="form" onSubmit={handleLogin}>
@@ -71,8 +73,12 @@ export const LoginForm = () => {
                         props={{ disabled: disable }}
                     />
                     <br />
-                </form>
-                <footer className="description">Faça o login para acessar a Área segura administrativa.</footer>
+                </form>    
+                </div>
+                <div className="background-division">
+                    <img src={animatedVector} className="image-login"/>
+                </div>
+                {/* <footer className="description">Faça o login para acessar a Área segura administrativa.</footer> */}
             </section>
         </div>
     )

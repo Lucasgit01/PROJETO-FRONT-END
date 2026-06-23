@@ -9,10 +9,11 @@ export const PswdInput = (inputProp: Props) => {
     const [effect, setEffect] = useState(false);
 
     return (
-        <div className="div-container" style={ effect ? { boxShadow: "0px 0px 5px white", border: "solid 1px blue" } : {}}>
+        <div className="div-container" style={ effect ? { boxShadow: "0px 0px 5px white", border: "solid 1px grey" } : {}}>
             <div className="icon"><LockKeyhole /></div>
             <input
                 onClick={() => setEffect(!effect)}
+                onBlur={() => setEffect(false)}
                 className="input-pass" {...inputProp}
                 type={view ? "text" : "password"}
             />

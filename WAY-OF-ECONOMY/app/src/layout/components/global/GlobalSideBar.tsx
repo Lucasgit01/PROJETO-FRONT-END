@@ -14,7 +14,7 @@ const pageVariants = {
 const pageTransition: Transition = {
   type: "tween",
   ease: "anticipate",
-  duration: 0.5,
+  duration: 0.8,
 };
 
 export const Sidebar = () => {
@@ -25,7 +25,7 @@ export const Sidebar = () => {
       {/* Sidebar */}
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <div className="sidebar-header">
-          <BriefcaseBusinessIcon/><h2>{authStore.role}</h2>
+          <BriefcaseBusinessIcon /><h2>{authStore.role}</h2>
 
           <button
             className="close-btn"
@@ -61,15 +61,18 @@ export const Sidebar = () => {
               ☰
             </button>
             <div className="store-name">
-              <span>S</span>
-              <span>Y</span>
-              <span>N</span>
-              <span>T</span>
-              <span>H</span>
-              <span>W</span>
-              <span>A</span>
-              <span>V</span>
+              <span>w</span>
+              <span>a</span>
+              <span>y</span>
+              <span>o</span>
+              <span>f</span>
               <span>E</span>
+              <span>C</span>
+              <span>O</span>
+              <span>N</span>
+              <span>O</span>
+              <span>M</span>
+              <span>Y</span>
             </div>
           </div>
           <div className="avatar">
@@ -78,7 +81,7 @@ export const Sidebar = () => {
           </div>
         </header>
 
-        <main className="main">
+        <main>
           <AnimatePresence mode="wait">
             <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
               <Outlet />

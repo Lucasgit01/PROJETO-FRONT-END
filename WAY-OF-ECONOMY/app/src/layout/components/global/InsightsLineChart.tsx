@@ -1,4 +1,4 @@
-import { LineChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line, ResponsiveContainer } from 'recharts';
+import { LineChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line, ResponsiveContainer, } from 'recharts';
 import type { ChartData } from 'recharts/types/state/chartDataSlice';
 
 export type DataChart = {
@@ -17,25 +17,25 @@ export const LineInsight = ({ DataChart, Attributes }: Props) => {
             <ResponsiveContainer>
                 <LineChart
                     style={{
-                        borderRadius: 10,
-                        background: '#e3e6e7',
-                        padding: 15,
-                        boxShadow: "0px 0px 4px black",
+                        background: '#991440',
+                        padding: 25,
+                        borderRadius: 15,
+                        boxShadow: "0px 0px 15px grey",
                     }}
                     data={DataChart}
                     margin={{
                         top: 5,
                         right: 30,
                         left: 20,
-                        bottom: 5,
+                        bottom: 10
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" name='Total Vendido - R$' activeDot={true} dataKey="value" stroke="#203372" isAnimationActive={true} />
+                    <XAxis dataKey="name" stroke='#dfe2ee' />
+                    <YAxis stroke='#dfe2ee' />
+                    <Tooltip labelStyle={{ color: "red" }} itemStyle={{ color: "red" }} />
+                    <Legend style={{ color: "red" }} />
+                    <Line type="monotone" name='Total Vendido - R$' activeDot={true} dataKey="value" stroke="#dfe2ee" isAnimationActive={true} />
                 </LineChart>
             </ResponsiveContainer>
         </div>

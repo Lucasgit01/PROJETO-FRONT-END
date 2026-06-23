@@ -11,10 +11,8 @@ export const Application = () => {
                 <Route path='/' element={<LoginForm />} ></Route>
                 <Route element={<OnlyAuth />}>
                     <Route element={<Sidebar />}>
-                        <Route>
-                            <Route path='home' element={<InitialPage />} />
-                            <Route path='teste' element={<h1>Teste</h1>} />
-                        </Route>
+                        <Route path='home' element={<InitialPage />} />
+                        <Route path='teste' element={<div>Teste</div>} />
                     </Route>
                 </Route>
             </Routes>

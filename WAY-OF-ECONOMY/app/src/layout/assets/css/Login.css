@@ -1,10 +1,10 @@
 .background {
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../images/login-admin-image.png");
+    background-image: url("../images/initial-login-image.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,14 +12,34 @@
 
 .section {
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px rgba(196, 26, 40, 0.918);
+    background-color: rgba(204, 18, 65, 0.418);
+}
+
+.background-division {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: rgb(252, 252, 252);
+}
+
+.background-division .image-login {
+    width: 550px;
+    height: 85%;
+}
+
+.insert-division {
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 30px 10px;
-    margin-right: 30%;
     border-radius: 20px;
-    box-shadow: 8px 8px 8px rgba(34, 7, 129, 0.808);
-    background-color: rgb(5, 16, 37);
 }
 
 .form {
@@ -27,6 +47,7 @@
     display: block;
     justify-items: center;
     align-content: center;
+    padding-right: 0px;
     padding-bottom: 15px;
 }
 

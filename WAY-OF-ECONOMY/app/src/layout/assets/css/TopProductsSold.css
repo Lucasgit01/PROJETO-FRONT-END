@@ -35,6 +35,7 @@
   transition: 0.3s;
   position: relative;
   overflow: hidden;
+  width: 200px;
 }
 
 .top3-card:hover {
