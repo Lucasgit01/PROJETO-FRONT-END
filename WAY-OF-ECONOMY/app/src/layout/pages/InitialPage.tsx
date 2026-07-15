@@ -26,6 +26,8 @@ export const InitialPage = () => {
         "Dezembro",
     ];
 
+    
+
     const formatMonth = (value: string) => {
         return value.charAt(0) + value.charAt(1) + value.charAt(2);
     }

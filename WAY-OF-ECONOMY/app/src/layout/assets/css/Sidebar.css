@@ -32,6 +32,7 @@
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid #374151;
+    
 }
 
 .close-btn {
@@ -87,11 +88,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    box-shadow: 2px 0px 5px rgba(134, 134, 134, 0.993);
 }
 
 .store-name {
-    color: rgb(40, 160, 16);
-    text-shadow: 0px 0px 4px rgba(112, 108, 110, 0.904);
+    color: rgb(30, 177, 25);
+    text-shadow: 0px 0px 4px rgba(35, 164, 187, 0.904);
     font-size: x-large;
     font-weight: 600;
 }
@@ -143,7 +145,7 @@
     padding: 5px 10px;
     border-radius: 10px;
     color: white;
-    background: linear-gradient(to bottom left, rgb(206, 180, 36), rgb(172, 11, 73));
+    background: linear-gradient(to bottom left, rgb(175, 18, 84), rgba(158, 14, 69, 0.692));
 }
 
 .avatar-image {

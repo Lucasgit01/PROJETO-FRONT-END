@@ -1,14 +1,38 @@
-// export class ApiMediator {
-//     constructor(
-//         private readonly pathname: object,
-//         private readonly params?: object,
-//     ) {}
+export class ApiMediator {
+    constructor(
+        private readonly route: object,
+        private readonly params?: object,
+    ) {}
 
-//     public async get(): Promise<object> {
-//         try {
+    public async read(): Promise<object> {
+        try {
             
-//         } catch (error) {
+        } catch (error) {
             
-//         }
-//     }
-// }
+        }
+    }
+
+    public async send() {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+
+    public async alter() {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+
+    public async exclude() {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+}

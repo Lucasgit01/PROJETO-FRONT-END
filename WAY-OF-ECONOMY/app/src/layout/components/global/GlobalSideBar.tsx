@@ -61,9 +61,9 @@ export const Sidebar = () => {
               ☰
             </button>
             <div className="store-name">
-              <span>w</span>
-              <span>a</span>
-              <span>y</span>
+              <span>W</span>
+              <span>A</span>
+              <span>Y</span>
               <span>o</span>
               <span>f</span>
               <span>E</span>

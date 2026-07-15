@@ -14,7 +14,10 @@ export const useAuthStore = create<AuthStore>()(
             role: "",
             avatar: null,
             setAuthData: (data: Auth) => { set({ ...data }) },
-            logout: () => set({ name: "", role: "", avatar: null })
+            logout: () => {
+                localStorage.removeItem("auth");
+                set({ name: "", role: "", avatar: null });
+            }
         }),
         {
             name: "auth",

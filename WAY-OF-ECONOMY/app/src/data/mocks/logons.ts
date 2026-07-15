@@ -19,9 +19,9 @@ export const LogonsData: Array<LogonType> = [
         avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnA2BsbdwpVHHQ9TfEjhGnGN20awMJ7vQHaw&s"
     },
     {
-        name: "Lucas Rocha",
+        name: "Lucas Silva",
         role: "Inventory Analyst",
-        email: "lucasrocha@synthwave.com",
+        email: "lucassilva@synthwave.com",
         password: "NeonWave!221",
         code: "731845",
         avatar: "https://img.freepik.com/vetores-premium/perfil-de-usuario-pessoa-avatar-identidade-login-icone-vector_1277826-982.jpg?semt=ais_hybrid&w=740&q=80"
@@ -89,5 +89,53 @@ export const LogonsData: Array<LogonType> = [
         password: "SpeedHub@904",
         code: "293750",
         avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF3Rh6X3WVh2EXli2Z1PKKaQrggeGtfjwiEw&s"
-    }
+    },
+    {
+        name: "João Silva",
+        email: "joao.silva@example.com",
+        password: "J#8vQ2!mL9xP",
+        code: "SLR001",
+        role: "seller",
+        avatar: null,
+    },
+    {
+        name: "Mariana Costa",
+        email: "mariana.costa@example.com",
+        password: "R7@kN4!zWp3L",
+        code: "SLR002",
+        role: "seller",
+        avatar: null,
+    },
+    {
+        name: "Carlos Oliveira",
+        email: "carlos.oliveira@example.com",
+        password: "T!5xYq8#Hb2M",
+        code: "SLR003",
+        role: "seller",
+        avatar: null,
+    },
+    {
+        name: "Ana Pereira",
+        email: "ana.pereira@example.com",
+        password: "P9$wLm3@Qx7R",
+        code: "PRT001",
+        role: "partner",
+        avatar: null,
+    },
+    {
+        name: "Lucas Fernandes",
+        email: "lucas.fernandes@example.com",
+        password: "X2&nCv6!Ks8D",
+        code: "PRT002",
+        role: "partner",
+        avatar: null,
+    },
+    {
+        name: "Fernanda Souza",
+        email: "fernanda.souza@example.com",
+        password: "M4*eTr9@Vz1H",
+        code: "PRT003",
+        role: "partner",
+        avatar: null,
+    },
 ];
