@@ -8,7 +8,7 @@ import { TextInput } from "../ui/TextField";
 import { PswdInput } from "../ui/PasswordInput";
 import { useState } from "react";
 import { ControllerLogin } from "../../data/controllers/login.controller";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, LogInIcon } from "lucide-react";
 import toastTrigger from "../lib/toastTrigger";
 import { useAuthStore } from "../components/auth/authStore";
 
@@ -60,23 +60,25 @@ export const LoginForm = () => {
         <div className="background">
             <section className="section">
                 <div className="insert-division">
-                <img className="top-image" src={escudo} width={100} /><br />
-                {error && <div className="error"><AlertCircle /><p className="msg-error"> {error}</p></div>}
-                <form className="form" onSubmit={handleLogin}>
-                    <legend>Email</legend>
-                    <TextInput onChange={(e) => setEmail(e.target.value)} />
-                    <legend>Senha</legend>
-                    <PswdInput onChange={(e) => setPass(e.target.value)} />
-                    <Button
-                        title={"Entrar"}
-                        requested={loading!}
-                        props={{ disabled: disable }}
-                    />
-                    <br />
-                </form>    
+                    <img className="top-image" src={escudo} width={100} /><br />
+                    {error && <div className="error"><AlertCircle /><p className="msg-error"> {error}</p></div>}
+                    <form className="form" onSubmit={handleLogin}>
+                        <legend>Email</legend>
+                        <TextInput onChange={(e) => setEmail(e.target.value)} />
+                        <legend>Senha</legend>
+                        <PswdInput onChange={(e) => setPass(e.target.value)} />
+                        <br />
+                        <Button
+                            title={"Entrar"}
+                            requested={loading!}
+                            props={{ disabled: disable }}
+                            Icon={LogInIcon}
+                        />
+                        <br />
+                    </form>
                 </div>
                 <div className="background-division">
-                    <img src={animatedVector} className="image-login"/>
+                    <img src={animatedVector} className="image-login" />
                 </div>
                 {/* <footer className="description">Faça o login para acessar a Área segura administrativa.</footer> */}
             </section>

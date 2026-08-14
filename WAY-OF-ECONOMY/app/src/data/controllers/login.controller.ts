@@ -28,6 +28,7 @@ export class ControllerLogin {
             return {
                 name: user.name,
                 role: user.role,
+                permissions: user.permissions,
                 avatar: user.avatar
             };
         } catch (error) {

@@ -17,7 +17,7 @@ export const LineInsight = ({ DataChart, Attributes }: Props) => {
             <ResponsiveContainer>
                 <LineChart
                     style={{
-                        background: '#991440',
+                        background: '#208199',
                         padding: 25,
                         borderRadius: 15,
                         boxShadow: "0px 0px 15px grey",
@@ -35,7 +35,7 @@ export const LineInsight = ({ DataChart, Attributes }: Props) => {
                     <YAxis stroke='#dfe2ee' />
                     <Tooltip labelStyle={{ color: "red" }} itemStyle={{ color: "red" }} />
                     <Legend style={{ color: "red" }} />
-                    <Line type="monotone" name='Total Vendido - R$' activeDot={true} dataKey="value" stroke="#dfe2ee" isAnimationActive={true} />
+                    <Line type="monotone" name='Total Vendido - R$' activeDot={true} dataKey="value" stroke="#e7e9f1" isAnimationActive={true} />
                 </LineChart>
             </ResponsiveContainer>
         </div>

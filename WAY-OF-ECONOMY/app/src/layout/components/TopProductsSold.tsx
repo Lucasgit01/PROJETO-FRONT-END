@@ -2,7 +2,7 @@ import type { OrderItems } from "../../@types/orders";
 import "../assets/css/TopProductsSold.css"
 
 type Props = {
-    products: Array<OrderItems>
+    products: OrderItems[]
 }
 export const TopProductsCard = ({ products }: Props) => {
     return (
@@ -16,14 +16,14 @@ export const TopProductsCard = ({ products }: Props) => {
                 {products.map((product, index) => (
                     <div
                         className={`top3-card rank-${index + 1}`}
-                        key={product.product}
+                        key={product.id}
                     >
                         <strong>#{index + 1}</strong><br />
-                        <img className="medal" src={product.image}>
+                        <img className="medal" src={product.images[0]}>
 
                         </img>
 
-                        <h3>{product.product}</h3>
+                        <h3>{product.label}</h3>
 
                         <p>{product.quantity} vendas</p>
 

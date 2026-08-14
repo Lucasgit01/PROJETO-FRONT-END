@@ -4,5 +4,6 @@ export interface LogonType {
     password: string,
     code: string,
     role: string,
+    permissions: string[],
     avatar: string | null
 };
