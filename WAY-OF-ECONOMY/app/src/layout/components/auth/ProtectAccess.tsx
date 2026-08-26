@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { useAuthStore } from "./authStore";
+import { useAuthStore } from "../../../hooks/authStore";
 
 export const OnlyAuth = () => {
     const setAuthStore = useAuthStore((state) => state.setAuthData);
@@ -13,7 +13,8 @@ export const OnlyAuth = () => {
             setAuthStore({
                 name: "",
                 role: "",
-                avatar: ""
+                avatar: "",
+                permissions: []
             })
             navigate("/")
         };

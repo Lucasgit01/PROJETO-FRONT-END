@@ -1,6 +1,116 @@
 .cards-container {
-    display: "flex";
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    gap: 25px;
+}
+
+hr {
+    width: 100%;
+    padding: 1px;
+    background-color: black;
+}
+
+body legend {
+    display: flex;
+    align-self: center;
+    column-gap: 5px;
+    font-weight: 00;
+    font-size: large;
+    color: rgb(3, 3, 3);
+}
+
+.total-saled-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px rgb(190, 189, 189);
+    border-radius: 15px;
+    padding: 10px 25px;
+    row-gap: 5px;
+    width: 290px;
+}
+
+.total-saled-card .all {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 8px;
+    color: rgb(114, 52, 212);
+    padding-bottom: 5px;
+}
+
+.total-saled-card .way {
+    color: rgb(21, 150, 85);
+}
+
+.total-saled-card .sponsor {
+    color: rgb(30, 89, 138);
+}
+
+.total-saled-card .ads {
+    color: rgb(129, 119, 125);
+}
+
+.total-products-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 5px rgb(190, 189, 189);
+    border-radius: 15px;
+    padding: 10px 25px;
+    row-gap: 5px;
+    width: 290px;
+    text-align: center;
+    color: rgb(131, 133, 119)
+}
+
+.total-products-card .all {
+    text-align: center;
+    color: rgb(25, 141, 177);
+    border: 3px outset grey;
+    border-radius: 20px;
+    padding: 4px;
+}
+
+.order-status-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 5px rgb(190, 189, 189);
+    border-radius: 15px;
+    padding: 10px 25px;
+    row-gap: 5px;
+    width: 290px;
+    text-align: center;
+}
+
+.status-data {
+    display: flex;
+    border: 1px dashed grey;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 3px 12px;
+}
+
+.concluded-data {
+    border-right: 1px solid grey;
+    padding: 0px 8px;
+}
+
+.concluded-data span:first-child {
+    font-weight: 800;
+    color: rgb(18, 65, 126);
+}
+
+.cancelled-data {
+    align-items: center;
+    padding: 0px 8px;
+}
+
+.cancelled-data span:first-child {
+    font-weight: 800;
+    color: rgb(124, 18, 27);
+}
+
+.data-text {
+    display: flex;
+    gap: 3px;
 }

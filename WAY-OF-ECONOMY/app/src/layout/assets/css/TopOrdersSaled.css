@@ -1,0 +1,94 @@
+.rank-container {
+    border-radius: 15px;
+    padding: 20px 15px;
+    background: linear-gradient(to right top,
+            rgb(46, 73, 88), rgb(56, 51, 54));
+}
+
+.rank-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-wrap-mode: nowrap;
+}
+
+.rank-title p:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 700;
+    gap: 6px;
+    padding-bottom: 3px;
+    color: white;
+}
+
+.rank-title p {
+    color: rgb(233, 224, 224);
+    font-size: smaller;
+}
+
+.topic {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.rank {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(67, 17, 133, 0.329);
+    border-radius: 10px;
+    padding: 0px 5px;
+    /* border: 1px solid */
+}
+
+.rank:nth-child(odd) {
+    background-color: rgba(86, 22, 160, 0.753);
+}
+
+.rank:first-child {
+    background-color: rgb(135, 143, 26);
+    box-shadow: 0 0 5px white
+
+}
+
+.rank-id {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    width: 50px;
+    max-width: 70px;
+    border-right: 1px dashed 
+}
+
+
+.rank-id p:last-child {
+    font-size: smaller;
+}
+
+.rank-infos {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4px 8px
+}
+
+.rank-infos p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: smaller;
+}
+
+.rank-infos p:first-child {
+    text-shadow: 0 0 3px white;
+    text-decoration: underline;
+}

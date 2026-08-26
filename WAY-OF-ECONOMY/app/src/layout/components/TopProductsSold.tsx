@@ -8,7 +8,7 @@ export const TopProductsCard = ({ products }: Props) => {
     return (
         <div className="top3-container">
             <div className="top3-header">
-                <h2>🔥 Top 3 Produtos</h2>
+                <h2>🔥 Top Produtos</h2>
                 <span>Os mais procurados</span>
             </div>
 
@@ -24,8 +24,8 @@ export const TopProductsCard = ({ products }: Props) => {
                         </img>
 
                         <h3>{product.label}</h3>
-
-                        <p>{product.quantity} vendas</p>
+                    
+                        <p>{product.origin} - {product.quantity} vendas</p>
 
                     </div>
                 ))}

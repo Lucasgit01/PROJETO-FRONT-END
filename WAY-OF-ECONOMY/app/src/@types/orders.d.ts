@@ -1,12 +1,13 @@
 import type { ProductBody } from "./products";
 
-export type OrderStatus = "à pagar" | "pago" | "separando" | "Enviado" | "Entregue" | "Cancelado";
+export type OrderStatus = "waiting payment" | "paid" | "separating" | "send" | "delivered" | "cancelled";
 
 export interface OrderItems extends ProductBody {
     quantity: number
 }
 
 export interface OrdersType {
+    id: string;
     buyer: string;
     sellersName: Array<string>;
     month: string;

@@ -1,8 +1,8 @@
 import "../../assets/css/Sidebar.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
-import { useAuthStore } from "../auth/authStore";
+import { useAuthStore } from "../../../hooks/authStore";
 import {
   Box,
   BriefcaseBusinessIcon,
@@ -17,12 +17,13 @@ import {
   Settings,
   UserCircle2Icon,
   ShoppingCartIcon,
-  BadgeDollarSign
+  BadgeDollarSign,
+  FilterX
 } from "lucide-react";
 import Logo from "../../assets/images/way of economy - cut - logo.png"
 import { Button } from "../../ui/SubmitButton";
 import { reduceName } from "../../../utils/reduceName";
-import { useManagementStore } from "./management-store";
+import { useManagementStore } from "../../../hooks/management-store";
 
 const pageVariants = {
   initial: { opacity: 0, x: -50 },
@@ -150,6 +151,15 @@ export const Sidebar = () => {
             <header>
               <p className="welcome">Olá, {reduceName(authStore.name, false)}. 👋 {interactions[randomInt]}</p>
               <div className="header-actions">
+                {store !== "all" &&
+                  <button
+                    className="header-buttons"
+                    style={{ background: `linear-gradient(to bottom left, rgb(138, 153, 151), rgb(124, 126, 124)` }}
+                    onClick={() => setStore("all")}
+                  >
+                    <FilterX />
+                  </button>
+                }
                 <button
                   className="header-buttons"
                   style={{ background: `linear-gradient(to bottom left, rgb(70, 204, 186), rgb(46, 177, 90)` }}

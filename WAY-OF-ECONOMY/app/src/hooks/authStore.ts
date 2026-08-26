@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { Auth } from "../../../@types/Auth";
+import type { Auth } from "../@types/Auth";
+
 
 interface AuthStore extends Auth {
     setAuthData(data: Auth): void
