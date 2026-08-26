@@ -10,7 +10,7 @@ import { useState } from "react";
 import { ControllerLogin } from "../../data/controllers/login.controller";
 import { AlertCircle, LogInIcon } from "lucide-react";
 import toastTrigger from "../lib/toastTrigger";
-import { useAuthStore } from "../components/auth/authStore";
+import { useAuthStore } from "../../hooks/authStore";
 
 export const LoginForm = () => {
     const [email, setEmail] = useState<string>('')

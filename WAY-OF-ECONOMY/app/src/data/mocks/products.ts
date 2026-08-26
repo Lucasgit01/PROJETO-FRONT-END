@@ -192,9 +192,10 @@ export const products: Array<ProductBody> = [
     ],
     reviewsCount: 86,
   },
-  //Produtos internos
+
+  // Produtos internos
   {
-    id: "prd001",
+    id: "PRD013",
     categoryId: "mc01",
     subCategoryId: "sub01",
     label: "Arroz Branco Tipo 1 5kg",
@@ -208,7 +209,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 182,
   },
   {
-    id: "prd002",
+    id: "PRD014",
     categoryId: "mc01",
     subCategoryId: "sub02",
     label: "Suco Integral de Uva 1L",
@@ -222,7 +223,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 96,
   },
   {
-    id: "prd003",
+    id: "PRD015",
     categoryId: "mc02",
     subCategoryId: "sub09",
     label: "Detergente Neutro 500ml",
@@ -236,7 +237,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 241,
   },
   {
-    id: "prd004",
+    id: "PRD016",
     categoryId: "mc02",
     subCategoryId: "sub11",
     label: "Sabão em Pó Premium 2kg",
@@ -250,7 +251,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 144,
   },
   {
-    id: "prd005",
+    id: "PRD017",
     categoryId: "mc03",
     subCategoryId: "sub16",
     label: "Shampoo Hidratação Profunda 400ml",
@@ -264,7 +265,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 75,
   },
   {
-    id: "prd006",
+    id: "PRD018",
     categoryId: "mc04",
     subCategoryId: "sub27",
     label: "Blocos de Montar Educativos 120 Peças",
@@ -278,7 +279,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 38,
   },
   {
-    id: "prd007",
+    id: "PRD019",
     categoryId: "mc05",
     subCategoryId: "sub29",
     label: "Camiseta Básica Masculina Preta",
@@ -292,7 +293,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 129,
   },
   {
-    id: "prd008",
+    id: "PRD020",
     categoryId: "mc06",
     subCategoryId: "sub34",
     label: "Smartphone Vision X 128GB",
@@ -302,12 +303,12 @@ export const products: Array<ProductBody> = [
     stock: 28,
     attributes: ["128GB", "5G", "6GB RAM"],
     compatibilities: ["Carregador USB-C", "Capas Vision X"],
-    details: ["Tela AMOLED 6.5\"", "Bateria 5000mAh"],
+    details: ['Tela AMOLED 6.5"', "Bateria 5000mAh"],
     freightCondition: "Frete grátis",
     reviewsCount: 214,
   },
   {
-    id: "prd009",
+    id: "PRD021",
     categoryId: "mc06",
     subCategoryId: "sub37",
     label: "Mouse Gamer RGB USB",
@@ -327,7 +328,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 187,
   },
   {
-    id: "prd010",
+    id: "PRD022",
     categoryId: "mc07",
     subCategoryId: "sub41",
     label: "Quadro Decorativo Paisagem 60x40",
@@ -346,7 +347,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 48,
   },
   {
-    id: "prd011",
+    id: "PRD023",
     categoryId: "mc08",
     subCategoryId: "sub47",
     label: "Caderno Universitário 200 Folhas",
@@ -360,7 +361,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 62,
   },
   {
-    id: "prd012",
+    id: "PRD024",
     categoryId: "mc09",
     subCategoryId: "sub54",
     label: "Suporte Veicular Magnético",
@@ -375,7 +376,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 131,
   },
   {
-    id: "prd013",
+    id: "PRD025",
     categoryId: "mc10",
     subCategoryId: "sub58",
     label: "Power Bank 20000mAh",
@@ -390,7 +391,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 205,
   },
   {
-    id: "prd014",
+    id: "PRD026",
     categoryId: "mc11",
     subCategoryId: "sub64",
     label: "Furadeira de Impacto 750W",
@@ -409,7 +410,7 @@ export const products: Array<ProductBody> = [
     reviewsCount: 88,
   },
   {
-    id: "prd015",
+    id: "PRD027",
     categoryId: "mc12",
     subCategoryId: "sub68",
     label: "Jogo de Panelas Antiaderente 5 Peças",

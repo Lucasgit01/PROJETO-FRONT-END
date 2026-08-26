@@ -27,10 +27,10 @@ const payments = [
     { method: "Boleto Bancário", installments: 1 },
 ];
 
-const status: OrderStatus[] = ["à pagar", "pago", "separando", "Enviado", "Entregue", "Cancelado"];
+const status: OrderStatus[] = ["waiting payment", "paid", "separating", "send", "delivered", "cancelled"];
 
 //Simular pedidos
-export const simOrders = (): OrdersType[] => Array.from({ length: 200 }, (_, index) => {
+export const simOrders = (): OrdersType[] => Array.from({ length: 10000 }, (_, index) => {
     const products = getOrdersItems();
     const sellers: string[] = [];
 
@@ -43,7 +43,7 @@ export const simOrders = (): OrdersType[] => Array.from({ length: 200 }, (_, ind
     const currentMonth = new Date().getMonth() + 1;
     const randomMonth = Math.floor(Math.random() * currentMonth);
     const randomLocale = cities[Math.floor(Math.random() * cities.length)];
-    const randomStatus = status[Math.floor(Math.random() + status.length - 1)];
+    const randomStatus = status[Math.floor(Math.random() * status.length - 1 ) + 1];
     const orderPayment = payments[Math.floor(Math.random() * payments.length)]
 
     const totalByAds = Number(
@@ -65,6 +65,7 @@ export const simOrders = (): OrdersType[] => Array.from({ length: 200 }, (_, ind
 
     return {
         ...randomLocale,
+        id: index.toString(),
         buyer: orderBuyer,
         sellersName: sellers,
         month: months[randomMonth],
